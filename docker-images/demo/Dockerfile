@@ -4,5 +4,5 @@
 #CMD
 
 FROM      centos:7
-ENTRYPOINT       sleep 10
+ENTRYPOINT       ["sleep", "10"]
 
