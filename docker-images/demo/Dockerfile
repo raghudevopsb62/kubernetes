@@ -14,3 +14,8 @@ USER              roboshop
 
 #FROM nginx
 #COPY index.html /usr/share/nginx/html/index.html
+
+ENTRYPOINT ["/bin/sh"]
+CMD ["sleep", "10"]
+
+/bin/sh -c "sleep 10"
