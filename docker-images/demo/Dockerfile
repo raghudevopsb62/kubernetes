@@ -3,8 +3,8 @@
 #RUN       echo Hello World >/usr/share/nginx/html/index.html
 #CMD
 
-FROM      centos:7
-ENTRYPOINT       ["sleep"]
-CMD ["10"]
+FROM              centos:7
+ENTRYPOINT        ["sleep"]
+CMD               ["10"]
 
 
