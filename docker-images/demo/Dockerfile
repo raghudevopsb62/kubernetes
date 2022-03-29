@@ -4,4 +4,5 @@
 #CMD
 
 FROM      centos:7
-CMD       ["sleep", "10"]
+CMD       sleep 10
+
