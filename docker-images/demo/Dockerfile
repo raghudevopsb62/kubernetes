@@ -5,6 +5,6 @@
 
 FROM              centos:7
 ENTRYPOINT        ["sleep"]
-CMD               ["10"]
+CMD               ["30"]
 
 
