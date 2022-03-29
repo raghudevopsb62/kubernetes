@@ -4,7 +4,8 @@
 #CMD
 
 FROM              centos:7
-ENTRYPOINT        ["sleep"]
-CMD               ["30"]
+#ENTRYPOINT        ["sleep"]
+#CMD               ["30"]
+ENV               URL=google.com
 
 
