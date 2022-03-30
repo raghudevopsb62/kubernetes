@@ -10,6 +10,11 @@ spec:
       env:
         - name: SAMPLE_URL
           value: "google.com"
+        - name: SAMPLE_URL1
+          valueFrom:
+            configMapKeyRef:
+              name: demo
+              key: SAMPLE_URL1
 
 ---
 apiVersion: v1
