@@ -26,4 +26,6 @@ metadata:
   name: demo
 data:
   SAMPLE_URL1: "google1.com"
+  URL1: example1.com
+  URL2: example2.com
 
