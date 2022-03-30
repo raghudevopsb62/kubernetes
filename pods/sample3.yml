@@ -10,3 +10,12 @@ spec:
       env:
         - name: SAMPLE_URL
           value: "google.com"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo
+data:
+  SAMPLE_URL1: "google1.com"
+
