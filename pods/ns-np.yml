@@ -1,0 +1,32 @@
+## NameSpace and Network Policy
+apiVersion: v1
+kind: NameSpace
+metadata:
+  name: dev
+---
+apiVersion: v1
+kind: NameSpace
+metadata:
+  name: prod
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  namespace: prod
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos
+  namespace: dev
+spec:
+  containers:
+    - name: centos
+      image: centos:7
+      command: ["sleep", "100000"]
+
