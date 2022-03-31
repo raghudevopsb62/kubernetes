@@ -20,24 +20,39 @@ spec:
         image: nginx:1.16
 
 ---
-apiVersion: v1
-kind: Pod
-metadata:
-  name: dummy
-  labels:
-    tier: frontend
-spec:
-  containers:
-    - name: nginx
-      image: nginx
+#apiVersion: v1
+#kind: Pod
+#metadata:
+#  name: dummy
+#  labels:
+#    tier: frontend
+#spec:
+#  containers:
+#    - name: nginx
+#      image: nginx
+#---
+#apiVersion: v1
+#kind: Pod
+#metadata:
+#  name: dummy1
+#  labels:
+#    tier: frontend
+#spec:
+#  containers:
+#    - name: nginx
+#      image: nginx
+
 ---
 apiVersion: v1
-kind: Pod
+kind: Service
 metadata:
-  name: dummy1
-  labels:
-    tier: frontend
+  name: frontend-cip
 spec:
-  containers:
-    - name: nginx
-      image: nginx
+  selector:
+    tier: frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+
