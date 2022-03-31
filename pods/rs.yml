@@ -29,3 +29,14 @@ spec:
   containers:
     - name: nginx
       image: nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dummy1
+  labels:
+    tier: frontend
+spec:
+  containers:
+    - name: nginx
+      image: nginx
