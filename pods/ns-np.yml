@@ -1,11 +1,11 @@
 ## NameSpace and Network Policy
 apiVersion: v1
-kind: NameSpace
+kind: Namespace
 metadata:
   name: dev
 ---
 apiVersion: v1
-kind: NameSpace
+kind: Namespace
 metadata:
   name: prod
 ---
