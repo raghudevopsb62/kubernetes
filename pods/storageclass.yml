@@ -1,16 +1,3 @@
-## Created a disk vol-0d9a19d14663e17b2
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: sample-pv
-spec:
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteOnce
-  awsElasticBlockStore:
-    volumeID: vol-0d9a19d14663e17b2
-    fsType: ext4
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -21,9 +8,8 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: null
----
+      storage: 3Gi
+--- 
 apiVersion: v1
 kind: Pod
 metadata:
