@@ -1,0 +1,50 @@
+## Created a disk vol-0d9a19d14663e17b2
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sample-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  awsElasticBlockStore:
+    volumeID: vol-0d9a19d14663e17b2
+    fsType: ext4
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sample-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: null
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: webserver
+  name: nginx-webserver
+spec:
+  containers: 
+    -
+      image: nginx
+      name: webserver
+      ports:
+        -
+          containerPort: 80
+          name: http
+      volumeMounts:
+        -
+          mountPath: /opt
+          name: app-data
+  volumes:
+    -
+      name: app-data
+      persistentVolumeClaim:
+        claimName: sample-pvc
