@@ -19,9 +19,9 @@ kubectl exec debug -- curl -s -L -o /tmp/mongodb.zip "https://github.com/robosho
 kubectl exec debug -- curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
 kubectl exec debug -- unzip -o /tmp/mongodb.zip
 kubectl exec debug -- unzip -o /tmp/mysql.zip
-kubectl exec debug -- mongo --host mongodb </mongodb-main/catalogue.js
-kubectl exec debug -- mongo --host mongodb </mongodb-main/users.js
-kubectl exec debug -- mysql -h mysql -uroot -ppassword </mysql-main/shipping.sql
+kubectl exec debug -- mongo --host mongodb \</mongodb-main/catalogue.js
+kubectl exec debug -- mongo --host mongodb \</mongodb-main/users.js
+kubectl exec debug -- mysql -h mysql -uroot -ppassword \</mysql-main/shipping.sql
 
 kubectl exec rabbitmq-0 -- rabbitmqctl add_user roboshop roboshop123
 kubectl exec rabbitmq-0 -- rabbitmqctl set_user_tags roboshop administrator
