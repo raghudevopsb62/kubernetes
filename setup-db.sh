@@ -5,15 +5,13 @@ NAMESPACE=default
 helm repo add stable https://charts.helm.sh/stable
 helm repo add bitnami https://charts.bitnami.com/bitnami
 
-helm upgrade -i mysql stable/mysql --set mysqlPassword=password
+helm upgrade -i mysql stable/mysql --set mysqlRootPassword=password
 helm upgrade -i rabbitmq bitnami/rabbitmq
 helm upgrade -i redis bitnami/redis --set auth.enabled=false
 helm upgrade -i mongodb bitnami/mongodb --set auth.enabled=false
 
 kubectl run debug --image=centos:7 -- sleep 100000
 
-MYSQL_PASSWORD=$(kubectl get secret --namespace default mysql -o jsonpath="{.data.mysql-root-password}" | base64 --decode; echo)
-sed -i -e "s/PASSWORD/${MYSQL_PASSWORD}/" db-load.sh
 kubectl cp db-load.sh debug:/db-load.sh
 kubectl exec debug -- bash /db-load.sh
 

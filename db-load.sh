@@ -9,4 +9,4 @@ unzip -o /tmp/mongodb.zip
 unzip -o /tmp/mysql.zip
 mongo --host mongodb </mongodb-main/catalogue.js
 mongo --host mongodb </mongodb-main/users.js
-mysql -h mysql -uroot -pPASSWORD </mysql-main/shipping.sql
+mysql -h mysql -uroot -ppassword </mysql-main/shipping.sql
