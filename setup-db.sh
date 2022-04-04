@@ -13,7 +13,7 @@ helm upgrade -i mongodb bitnami/mongodb --set auth.enabled=false
 kubectl run debug --image=centos:7 -- sleep 100000
 
 kubectl cp db-load.sh debug:/db-load.sh
-kubectl exec debug -- /db-load.sh
+kubectl exec debug -- bash /db-load.sh
 
 
 kubectl exec rabbitmq-0 -- rabbitmqctl add_user roboshop roboshop123
