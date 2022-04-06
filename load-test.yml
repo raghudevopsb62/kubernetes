@@ -1,0 +1,23 @@
+#docker run -e "HOST=http://af3c7ef987bad42ceb40502074cc66c9-1786385343.us-east-1.elb.amazonaws.com/" -e "NUM_CLIENTS=50" -e "RUN_TIME=1m" -e "ERROR=0" -e "SILENT=0" robotshop/rs-load
+apiVersion: v1
+kind: Pod
+metadata:
+  name: load-test
+  namespace: dev
+spec:
+  containers:
+    - name: load
+      image: robotshop/rs-load
+      env:
+        - name: HOST
+          value: "http://frontend"
+        - name: NUM_CLIENTS
+          value: "50"
+        - name: RUN_TIME
+          value: 1m
+        - name: SILENT
+          value: "0"
+        - name: ERROR
+          value: "0"
+
+       
