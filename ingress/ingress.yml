@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: roboshop.devopsb62.xyz
+  - host: roboshop-dev.devopsb62.xyz
     http:
       paths:
       - path: /
