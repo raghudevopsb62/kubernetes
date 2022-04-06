@@ -13,3 +13,20 @@ spec:
         backend:
           serviceName: frontend
           servicePort: 80
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: grafana.devopsb62.xyz
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: prometheus-grafana
+          servicePort: 80
+
