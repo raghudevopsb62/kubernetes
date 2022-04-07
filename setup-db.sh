@@ -23,3 +23,5 @@ kubectl -n ${NAMESPACE} exec rabbitmq-0 -- rabbitmqctl add_user roboshop robosho
 kubectl -n ${NAMESPACE} exec rabbitmq-0 -- rabbitmqctl set_user_tags roboshop administrator
 kubectl -n ${NAMESPACE} exec rabbitmq-0 -- rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
 
+### Metric Server for HPA
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
